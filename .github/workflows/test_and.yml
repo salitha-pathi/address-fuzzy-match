@@ -1,0 +1,80 @@
+name: Test & Coverage CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+permissions:
+  contents: write
+  checks: write
+
+jobs:
+  # 1. Preparation Job (Runs first)
+  preparation:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install Dependencies
+      run: npm ci
+
+  # 2. Coverage Job (Runs in parallel with test)
+  coverage:
+    runs-on: ubuntu-latest
+    needs: preparation
+    environment: codecov
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install Dependencies (Uses Cache)
+      run: npm ci
+
+    - name: Run Coverage
+      run: npm test -- --coverage
+
+    - name: Upload Coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+  # 3. Test Status Job (Runs in parallel with coverage)
+  test:
+    runs-on: ubuntu-latest
+    needs: preparation
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install Dependencies (Uses Cache)
+      run: npm ci
+
+    - name: Run Tests & Generate JUnit Report
+      run: npm test
+
+    - name: Generate Test Status Badge Data
+      uses: test-summary/action@v2
+      with:
+        paths: '**/junit.xml'
+      if: always()
