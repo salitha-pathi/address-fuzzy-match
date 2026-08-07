@@ -1,6 +1,6 @@
 {
   "name": "address-fuzzy-match",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Match a source postal address to a given address (e.g. from OCR)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
