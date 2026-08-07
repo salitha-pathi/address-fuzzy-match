@@ -1,3 +1,14 @@
+[![npm version](https://img.shields.io/npm/v/address-fuzzy-match)](https://www.npmjs.com/package/address-fuzzy-match)
+[![Test & Coverage CI](https://github.com/salitha-pathi/address-fuzzy-match/actions/workflows/test.yml/badge.svg)](https://github.com/salitha-pathi/address-fuzzy-match/actions/workflows/test.yml)
+[![npm downloads](https://img.shields.io/npm/dm/address-fuzzy-match)](https://www.npmjs.com/package/address-fuzzy-match)
+[![License](https://img.shields.io/npm/l/address-fuzzy-match)](https://github.com/salitha-pathi/address-fuzzy-match/blob/main/LICENSE)
+
+[![Socket Badge](https://socket.dev/api/badge/npm/package/address-fuzzy-match)](https://socket.dev/npm/package/address-fuzzy-match)
+[![codecov](https://codecov.io/github/salitha-pathi/address-fuzzy-match/branch/main/graph/badge.svg?token=N775X84TOQ)](https://codecov.io/github/salitha-pathi/address-fuzzy-match)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/salitha-pathi/address-fuzzy-match/badge)](https://securityscorecards.dev/viewer/?uri=github.com/salitha-pathi/address-fuzzy-match)
+
+[![GitHub stars](https://img.shields.io/github/stars/salitha-pathi/address-fuzzy-match?style=social)](https://github.com/salitha-pathi/address-fuzzy-match/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/salitha-pathi/address-fuzzy-match?style=social)](https://github.com/salitha-pathi/address-fuzzy-match/network/members)
 # Address Fuzzy Match
 
 Match an extracted (e.g. OCR) postal address against an authoritative reference address.
