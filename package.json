@@ -2,6 +2,10 @@
   "name": "address-fuzzy-match",
   "version": "0.9.1",
   "description": "Match a source postal address to a given address (e.g. from OCR)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/salitha-pathi/address-fuzzy-match"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
