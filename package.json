@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/salitha-pathi/address-fuzzy-match"
   },
+  "homepage": "https://salitha-pathi.github.io/browser-dev-tools",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
